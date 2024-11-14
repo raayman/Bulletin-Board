@@ -101,8 +101,8 @@
     let randomYmobile = (min = 0, max = 80) => Math.floor(Math.random() * (max - min + 1) + min);
 
     imgs.forEach(img => {
-        img.style.left = ${randomXmobile()}%;
-        img.style.top = ${randomYmobile()}%;
+        img.style.left = `${randomXmobile()}%`;
+        img.style.top = `${randomYmobile()}%`;
 
         img.addEventListener('touchstart', (e) => {
             isDragging = true;
@@ -121,8 +121,8 @@
                 left = Math.max(containerRect.left, Math.min(left, containerRect.right - img.offsetWidth));
                 top = Math.max(containerRect.top, Math.min(top, containerRect.bottom - img.offsetHeight));
 
-                img.style.left = ${left}px;
-                img.style.top = ${top}px;
+                img.style.left = `${left}px`;
+                img.style.top = `${top}px`;
             }
         }, { passive: true });
 
@@ -172,8 +172,8 @@
                     top = containerRect.bottom - img.offsetHeight;
                 }
 
-                img.style.left = ${left}px;
-                img.style.top = ${top}px;
+                img.style.left = `${left}px`;
+                img.style.top = `${top}px`;
             }
         });
 
