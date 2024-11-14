@@ -129,7 +129,7 @@
         img.addEventListener('touchend', (e) => {
             const touchDuration = new Date().getTime() - startTouchTime;
             if (!isMoving && touchDuration < 200) { // Detect tap within 200ms
-                window.location.href = img.getAttribute('data-url');
+                window.open(img.getAttribute('data-url'), '_parent')
             }
             isDragging = false;
             isMoving = false;
@@ -179,7 +179,7 @@
 
         img.addEventListener('click', (e) => {
             if (!isMoving) {
-                window.location.href = img.getAttribute('data-url');
+               window.open(img.getAttribute('data-url'), '_parent')
             }
         })
 
