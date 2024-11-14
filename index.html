@@ -126,14 +126,14 @@
             }
         }, { passive: true });
 
-        img.addEventListener('touchend', (e) => {
-            const touchDuration = new Date().getTime() - startTouchTime;
-            if (!isMoving && touchDuration < 200) { // Detect tap within 200ms
-                window.location.href = img.getAttribute('data-url');
-            }
-            isDragging = false;
-            isMoving = false;
-        }, { passive: true });
+img.addEventListener('touchend', (e) => {
+    const touchDuration = new Date().getTime() - startTouchTime;
+    if (!isMoving && touchDuration < 200) { // Detect tap within 200ms
+        window.open(img.getAttribute('data-url'), '_parent');
+    }
+    isDragging = false;
+    isMoving = false;
+}, { passive: true });
 
         img.addEventListener('touchcancel', () => {
             isDragging = false;
@@ -177,11 +177,11 @@
             }
         });
 
-        img.addEventListener('click', (e) => {
-            if (!isMoving) {
-                window.location.href = img.getAttribute('data-url');
-            }
-        })
+img.addEventListener('click', (e) => {
+    if (!isMoving) {
+        window.open(img.getAttribute('data-url'), '_parent');
+    }
+});
 
         img.addEventListener('mouseup', (e) => {
             setTimeout(() => {
