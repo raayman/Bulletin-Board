@@ -160,22 +160,14 @@
                 let top = e.clientY - offsetY;
                 isMoving = true;
 
-                if (left < containerRect.left) {
-                    left = containerRect.left;
-                } else if (left > containerRect.right - img.offsetWidth) {
-                    left = containerRect.right - img.offsetWidth;
-                }
-
-                if (top < containerRect.top) {
-                    top = containerRect.top;
-                } else if (top > containerRect.bottom - img.offsetHeight) {
-                    top = containerRect.bottom - img.offsetHeight;
-                }
+                left = Math.max(containerRect.left, Math.min(left, containerRect.right - img.offsetWidth));
+                top = Math.max(containerRect.top, Math.min(top, containerRect.bottom - img.offsetHeight));
 
                 img.style.left = `${left}px`;
                 img.style.top = `${top}px`;
             }
         });
+
 
         img.addEventListener('click', (e) => {
             if (!isMoving) {
