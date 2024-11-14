@@ -118,8 +118,8 @@
                 let top = e.touches[0].clientY - offsetY;
                 isMoving = true;
 
-                left = Math.max(containerRect.left, Math.min(left, containerRect.right - img.offsetWidth));
-                top = Math.max(containerRect.top, Math.min(top, containerRect.bottom - img.offsetHeight));
+                left = Math.max(0, Math.min(left, containerRect.width - img.offsetWidth));
+                top = Math.max(0, Math.min(top, containerRect.height - img.offsetHeight));
 
                 img.style.left = `${left}px`;
                 img.style.top = `${top}px`;
@@ -160,8 +160,8 @@
                 let top = e.clientY - offsetY;
                 isMoving = true;
 
-                left = Math.max(containerRect.left, Math.min(left, containerRect.right - img.offsetWidth));
-                top = Math.max(containerRect.top, Math.min(top, containerRect.bottom - img.offsetHeight));
+                left = Math.max(0, Math.min(left, containerRect.width - img.offsetWidth));
+                top = Math.max(0, Math.min(top, containerRect.height - img.offsetHeight));
 
                 img.style.left = `${left}px`;
                 img.style.top = `${top}px`;
