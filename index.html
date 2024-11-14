@@ -121,7 +121,8 @@
                 left = Math.max(0, Math.min(left, containerRect.width - img.offsetWidth));
                 top = Math.max(0, Math.min(top, containerRect.height - img.offsetHeight));
 
-                img.style.transform = `translate(${left}px, ${top}px)`;
+                img.style.left = `${left}px`;
+                img.style.top = `${top}px`;
             }
         }, { passive: true });
 
@@ -162,7 +163,8 @@
                 left = Math.max(0, Math.min(left, containerRect.width - img.offsetWidth));
                 top = Math.max(0, Math.min(top, containerRect.height - img.offsetHeight));
 
-                img.style.transform = `translate(${left}px, ${top}px)`;
+                img.style.left = `${left}px`;
+                img.style.top = `${top}px`;
             }
         });
 
